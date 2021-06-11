@@ -8,7 +8,7 @@ sidoName = '&sidoName=경남'
 
 res = requests.get(open_api+serviceKey+returnType+numOfRows+sidoName)
 
-# print(res.text)
+print(res.text)
 # json data는 대-소문자 구별하여 호출
 
 if res.status_code == 200:

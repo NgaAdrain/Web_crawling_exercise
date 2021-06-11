@@ -260,11 +260,18 @@ def main():
 			name_list[index] = name_list[index].replace(' ','')
 			n_list.append(name_list[index])
 		index = index + 1
-	index = 0
-	for memorial in data_list:
-		memorial[1] = n_list[index]
-		index += 1
-	
+
+	# print(n_list)
+	print(len(n_list))
+	print(len(data_list))
+
+	for i, memorial in enumerate(data_list):
+		print(memorial)
+		if i == len(n_list):
+			break
+		data_list[i][1] = n_list[i]
+		print(data_list[i])
+
 	features = ["ID","NAME","RARE","FEATURE","TYPE","ATK","SP_ATK","DEF","SP_DEF","HUGE_SKILL","LEGION_SKILL","LEGION_SUPPORT_SKILL"]	
 	data_list.insert(0,features)
 	# for memorial in data_list:
@@ -298,10 +305,10 @@ def main():
 		temp.append(update_list[i])
 		gacha_list.append(temp)
 
-	# for element in gacha_list:
-	# 	print(element)
+	for element in gacha_list:
+		print(element)
 	
-	write_excel_template('lily.xls','memoria', data_list, 'gacha',gacha_list)
+	write_excel_template('lily.xlsx','memoria', data_list, 'gacha', gacha_list)
 
 if __name__ == "__main__":
 	main()
